@@ -1,0 +1,43 @@
+{
+  "name": "xiaohongshu-copywriter-agent",
+  "version": "1.0.0",
+  "description": "小红书文案智能体 - 冷知识科普 & 育儿科普赛道",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,red \"tsx watch src/api/server.ts\" \"cd web && npm run dev\"",
+    "start": "npm run build:web && tsx src/api/server.ts",
+    "dev:api": "tsx watch src/api/server.ts",
+    "dev:web": "cd web && npm run dev",
+    "build:web": "cd web && npm run build",
+    "crawl": "tsx src/crawler/scheduler.ts",
+    "generate": "tsx src/generator/agent.ts",
+    "db:init": "tsx src/knowledge/init.ts",
+    "db:seed": "tsx src/knowledge/seed.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "better-sqlite3": "^11.7.0",
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.7",
+    "express": "^5.2.1",
+    "js-yaml": "^4.1.0",
+    "openai": "^4.77.0",
+    "playwright": "^1.49.0",
+    "playwright-extra": "^4.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "winston": "^3.17.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.10.0",
+    "concurrently": "^10.0.3",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}

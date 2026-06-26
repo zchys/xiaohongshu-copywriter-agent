@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+web/node_modules/
+
+# Build output
+dist/
+web/dist/
+
+# Environment
+.env
+
+# Database
+data/*.db
+data/*.db-wal
+data/*.db-shm
+
+# Cookies
+data/cookies.json
+
+# Screenshots
+data/screenshots/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Cache
+.cache/
+*.tsbuildinfo
