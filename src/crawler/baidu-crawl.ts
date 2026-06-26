@@ -162,7 +162,7 @@ async function crawlTrack(track: Track, queries: string[]) {
           body: noteData.body,
           tags: noteData.tags || [],
           author_id: '',
-          author_name: noteData.authorName || '',
+          author_name: (noteData as any).authorName || '',
           author_fans: 0,
           liked: noteData.liked || 0,
           collected: noteData.collected || 0,
