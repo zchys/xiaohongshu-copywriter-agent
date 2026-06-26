@@ -24,7 +24,8 @@ app.use(cors());
 app.use(express.json());
 
 // 静态文件（前端构建产物）
-app.use(express.static(path.join(__dirname, '../../web/dist')));
+const staticPath = path.join(__dirname, '../../web/dist');
+app.use(express.static(staticPath));
 
 // ═══════════════════════════════════════════════════
 // API 路由
@@ -227,7 +228,7 @@ app.get('/api/facts', (req, res) => {
 // --- SPA fallback ---
 
 app.get('/{*path}', (_req, res) => {
-  res.sendFile(path.join(__dirname, '../../web/dist/index.html'));
+  res.sendFile(path.join(staticPath, 'index.html'));
 });
 
 // ═══════════════════════════════════════════════════

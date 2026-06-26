@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently -n api,web -c blue,red \"tsx watch src/api/server.ts\" \"cd web && npm run dev\"",
-    "start": "npm run build:web && tsx src/api/server.ts",
+    "start": "tsx src/api/server.ts",
+    "build": "cd web && npm install && npm run build",
+    "postinstall": "npm run build",
     "dev:api": "tsx watch src/api/server.ts",
     "dev:web": "cd web && npm run dev",
     "build:web": "cd web && npm run build",
