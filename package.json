@@ -15,7 +15,6 @@
     "generate": "tsx src/generator/agent.ts",
     "db:init": "tsx src/knowledge/init.ts",
     "db:seed": "tsx src/knowledge/seed.ts",
-    "build": "tsc",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
